@@ -26,7 +26,7 @@ public class PBO210117045Latihan23NilaiTerbesarDanTerkecil {
         int nMhs;
         int nBesar;
         int nKecil;
-        int nilaiMhs;
+        int nilaiMhs[] = new int[20];
         Scanner scn = new Scanner(System.in);
         
         System.out.println("======Program Nilai Terbesar dan Terkecil Nilai "
@@ -38,22 +38,26 @@ public class PBO210117045Latihan23NilaiTerbesarDanTerkecil {
         System.out.print("Masukkan Banyaknya Mahasiswa : ");
         nMhs = scn.nextInt();
         
-        //inisialisasi
         nBesar = 0;
         nKecil = 100;
 
         for (int i = 1; i <= nMhs; i++) {
             System.out.print("Masukkan Nilai Mahasiswa ke-"+i+" = ");
-            nilaiMhs = scn.nextInt();
+            nilaiMhs[i] = scn.nextInt();
             
-            nBesar = ((nBesar<=nilaiMhs)?nilaiMhs:nBesar);
-            nKecil = ((nKecil>=nilaiMhs)?nilaiMhs:nKecil);
+            nBesar = ((nBesar<=nilaiMhs[i])?nilaiMhs[i]:nBesar);
+            nKecil = ((nKecil>=nilaiMhs[i])?nilaiMhs[i]:nKecil);
+        }
+        System.out.println("\n"+"======Hasil Nilai Mahsiswa======");
+         for (int i = 1; i <= nMhs; i++) {
+            System.out.println("Nilai Mahasiswa ke-"+i+" = " + nilaiMhs[i]);
+
         }
         
 //        menampilkan hasil dari nilai terbesar dan nilai terkecil
         System.out.print("\nNilai Terbesar adalah : "+ nBesar);
         System.out.println("\nNilai Terkecil adalah : "+ nKecil);
-        
+        System.out.println("\n"+"Petugas : "+ petugas);
     }
     
 }
